@@ -9,10 +9,10 @@ except IOError:
     README = ""
 
 trigger_extras = {"PyYAML<7", "lxml>=4.3.1", "mock==3.*"}
-aiohttp_extras = {"aiohttp<4"} | trigger_extras
-django_extras = {"Django<5"} | trigger_extras
-falcon_extras = {"falcon<4", "falcon-multipart==0.2.0"} | trigger_extras
-flask_extras = {"Flask<3"} | trigger_extras
+aiohttp_extras = {"aiohttp<3.11"} | trigger_extras
+django_extras = {"Django<6"} | trigger_extras
+falcon_extras = {"falcon<5", "falcon-multipart==0.2.0"} | trigger_extras
+flask_extras = {"Flask<4"} | trigger_extras
 fastapi_extras = {
     "fastapi<1",
     "uvicorn[standard]<1.0",
@@ -70,6 +70,8 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
     ],
     keywords="security testing",
     author="Contrast Security, Inc.",

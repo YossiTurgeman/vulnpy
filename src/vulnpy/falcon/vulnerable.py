@@ -62,7 +62,6 @@ def find_base_class(name):
 
 
 def get_trigger_view(name, trigger):
-
     baseclass = find_base_class(name)
 
     class _View(baseclass):
@@ -115,7 +114,7 @@ def _set_response(resp, path):
     """
     Set the response body and Content-Type
     """
-    resp.body = get_template(path)
+    resp.text = get_template(path)
     resp.content_type = "text/html"
 
 
@@ -123,5 +122,5 @@ def _set_xss_response(resp, path, user_input):
     template = get_template(path)
     template += "<p>XSS: " + user_input + "</p>"
 
-    resp.body = template
+    resp.text = template
     resp.content_type = "text/html"
